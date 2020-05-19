@@ -1,19 +1,31 @@
-### Instructions
+### Rock Paper Scissors Pseudocode
 
-Loops
+1. Prompt user to enter r, p, or s representing rock, paper, or scissors.
 
-## 2. Try this - How would you output?
-I am 1
-I am 2
-I am 3
+2. Computer chooses a random value in a list of r, p, or s.
 
-## 3. Try this
-* Starting from scratch, write code that loops through the following array and logs the name of each animal on the farm to the console:
+3. We determine if the user wins or not.
 
-```
-var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
-```
+   * If user picks rock and if computer picks scissors then user wins.
 
-* Then check if the first letter in the animal's name begins with a "c" or "o". If it does, create an alert saying, "Starts with 'c' or 'o'!"
+   * If user picks rock and if computer picks paper then user loses.
 
-* **HINT:** You can access the first character of a string as if it were the first element of an array.
+   * If user picks scissors and if computer picks rock then user loses.
+
+   * If user picks scissors and if computer picks paper then user wins.
+
+   * If user picks paper and if computer picks rock then user wins.
+
+   * If user picks paper and if computer picks scissors then user loses.
+
+   * If user picks the same as computer then they tie.
+
+4. We then add to their score.
+
+   * If user wins then we add one to their wins.
+
+   * If user loses then we add one to their losses.
+
+   * If user ties then we add one to their ties.
+
+5. Prompt user to play again.
