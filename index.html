@@ -2,37 +2,33 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8" />
-    <title>Steak Conditional Activity</title>
+    <title>Favorite Bands</title>
   </head>
   <body>
-    <script type="text/javascript">
-      // Here we ask the user if they eat steak, and store the result (true/false) in a variable.
-      var eatSteak = confirm('Do you eat steak?');
+    <script>
+      // Created an array named myBands.
+      var myBands = [
+        'britney',
+        'selena',
+        'bob dylan',
+        'blink 182',
+        'michael jackson',
+      ];
 
-      // If the user eats steak (eatSteak === true) we run the following code block.
-      if (eatSteak) {
-        alert("Here's a steak");
+      // Created a prompt to get the user's favorite band.
+      var userGuess = prompt('Which band or artist do you like?');
+
+      // Converts the user's answer to lowercase.
+      var userGuessLower = userGuess.toLowerCase();
+
+      // Now we check the myBands array to see if it contains the user's answer.
+      // If the user's band is not in the array...
+      if (myBands.indexOf(userGuessLower) === -1) {
+        alert("Nah! They're pretty lame...");
       }
-      // If the above condition isn't met (eatSteak !== true), run the following block of code instead.
+      // If it is in the array...
       else {
-        alert("Here's a tofu stir fry!");
-      }
-
-      // Bonus
-      // Here we ask the user what year they were born, and store their response to a variable.
-      var birthYear = prompt('What year were you born?');
-
-      // If the user was born before 1997, alert "SAKE SAKE SAKE!"
-      if (birthYear < 1997) {
-        alert('SAKE SAKE SAKE!');
-      }
-      // Else if the user was born after 1997, alert "No Sake for you!"
-      else if (birthYear > 1997) {
-        alert('No Sake for you!');
-      }
-      // If neither of the previous conditions was true (birthYear === 1995) we alert "You inched by!"
-      else {
-        alert('You inched by! Sake Sake Sake!');
+        alert('OMG! I love them too!');
       }
     </script>
   </body>

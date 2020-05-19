@@ -1,10 +1,15 @@
 ### Instructions
 
-* Create a website (from scratch) that asks users if they eat steak.
+* Create a website that accomplishes the following:
 
-* If they respond with "yes", alert the following to the page: "Here’s a Steak Sandwich!"
+  * Create an array of your favorite bands.
 
-* If they respond with "no", alert the following to the page: "Here’s a Tofu Stir-Fry!"
+  * With a prompt, ask the user's favorite band.
 
-* **BONUS:** Ask what the user’s birth year is. If they are under 21, alert the following: "No Sake for you!"
+  * If it's one of your favorites, alert: "YEAH I LOVE THEM!"
+
+  * If it's not, alert: "Nah. They're pretty lame."
+
+  * **HINT:**  You will need to research how to use `.indexOf()`.
+
 
