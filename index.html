@@ -2,61 +2,78 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8" />
-    <title>Superhero Logging - No Functions</title>
+    <title>My First Object</title>
   </head>
   <body>
     <h1>Open the console to see the magic!</h1>
 
-    <script type="text/javascript">
-      // Various Arrays
-      var brands = ['Acer', 'Apple', 'Sony', 'Samsung'];
-      var heroes = [
-        'Black Panther',
-        'Cyborg',
-        'Black Canary',
-        'Donna Troy',
-        'Huntress',
-        'Blue Beetle',
-        'Captain Atom',
-      ];
-      var booksOnMyShelf = [
-        'Calculus Early Transcendentals',
-        'Ravens',
-        'The Self Illusion',
-        'Harry Potter',
-      ];
-      var thingsInFrontOfMe = ['Laptop', 'Beanbag', 'Cats', 'Slippers'];
-      var howIFeel = ['Sleep Deprived', 'Wired on Coffee', 'Excited'];
+    <script>
+      // Creating our car object.
+      var car = {
+        // Properties of our car object.
+        make: 'Honda',
+        model: 'Fit',
+        color: 'Blue Raspberry',
+        mileage: 3000,
+        isWorking: true,
 
-      // For Loop for Brands
-      for (var i = 0; i < brands.length; i++) {
-        console.log(brands[i]);
-      }
-      console.log('---------');
+        // Creating the driveToWork method.
+        // A method is a function associated with an object.
+        driveToWork: function () {
+          // When we say "this" (as in this.mileage) we are referring to the object the method is a part of.
+          // In this case, we will alert the mileage of the car object.
+          alert('Old Mileage: ' + this.mileage);
 
-      // For Loop for Heroes
-      for (var j = 0; j < heroes.length; j++) {
-        console.log(heroes[j]);
-      }
-      console.log('---------');
+          // Adding 8 to the car's mileage.
+          this.mileage = this.mileage + 8;
 
-      // For Loop for booksOnMyShelf
-      for (var k = 0; k < booksOnMyShelf.length; k++) {
-        console.log(booksOnMyShelf[k]);
-      }
-      console.log('---------');
+          // Alerting the car's new mileage.
+          alert('New mileage: ' + this.mileage);
+        },
 
-      // For Loop for thingsInFrontOfMe
-      for (var l = 0; l < thingsInFrontOfMe.length; l++) {
-        console.log(thingsInFrontOfMe[l]);
-      }
-      console.log('---------');
+        // The driveAroundWorld method adds 24,000 miles to our car, sets isWorking to false, and makes some alerts.
+        driveAroundWorld: function () {
+          alert('Old Mileage: ' + this.mileage);
 
-      // For Loop for howIFeel
-      for (var m = 0; m < howIFeel.length; m++) {
-        console.log(howIFeel[m]);
-      }
-      console.log('---------');
+          this.mileage = this.mileage + 24000;
+
+          alert('New Mileage: ' + this.mileage);
+          alert('Car needs a tuneup!');
+
+          this.isWorking = false;
+        },
+
+        // The getTuneUp method sets isWorking to true and alerts a message.
+        getTuneUp: function () {
+          alert('Car is ready to go!');
+          this.isWorking = true;
+        },
+
+        // The honk method alerts a honking message.
+        honk: function () {
+          alert('Honk! Honk!');
+        },
+      };
+
+      // How would we log...
+
+      // The car's make?
+      console.log(car.make);
+
+      // The car's model?
+      console.log(car.model);
+
+      // The car's mileage?
+      console.log(car.mileage);
+
+      // How would we run the car's driveToWork method?
+      car.driveToWork();
+
+      // How would we run the car's driveAroundWorld method?
+      car.driveAroundWorld();
+
+      // How would we run the getTuneUp method?
+      car.getTuneUp();
     </script>
   </body>
 </html>
