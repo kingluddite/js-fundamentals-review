@@ -1,15 +1,19 @@
 ### Instructions
 
-* Create a website that accomplishes the following:
+Loops
 
-  * Create an array of your favorite bands.
+## 2. Try this - How would you output?
+I am 1
+I am 2
+I am 3
 
-  * With a prompt, ask the user's favorite band.
+## 3. Try this
+* Starting from scratch, write code that loops through the following array and logs the name of each animal on the farm to the console:
 
-  * If it's one of your favorites, alert: "YEAH I LOVE THEM!"
+```
+var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+```
 
-  * If it's not, alert: "Nah. They're pretty lame."
+* Then check if the first letter in the animal's name begins with a "c" or "o". If it does, create an alert saying, "Starts with 'c' or 'o'!"
 
-  * **HINT:**  You will need to research how to use `.indexOf()`.
-
-
+* **HINT:** You can access the first character of a string as if it were the first element of an array.
