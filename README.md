@@ -1,84 +1,151 @@
-# Numbers in JavaScript
-## Only one type of number in JavaScript and that is `Number`
+# Good to know
 
-## typeof
+## strict mode
 ```
-const age = 21; // this is an integer (but type is number)
-const price = 100.52; // this is a float (but type is number)
+'use strict'
 ```
 
-`$ typeof age` ("number")
-
-## math operators
-```
-+ add
-- subtract
-* multiple
-/ divide
-```
-
-### casting
-* if you multiply strings numbers, subtract or divide them JavaScript will cast them as a number (**note** but it won't when using `+`)
-
-## JavaScript helper functions
-* Math
-    - .round()
-    - .floor()
-    - .ceil()
-    - .random()
-
-## Two other Math operators
-* modulo
-    - remainder
-    - Type this in console `0.1 + 0.2`
-    - Why?
-    - Type this in console
+* If you use this and try this:
 
 ```
-window.location = `https://${0.1 + 0.2}.com`;
+'use strict'
+dog = 'peaches';
 ```
 
-* **Tip** Don't store money in dollars and cents
-    - This will prevent any strange JavaScript decimal behavior
-    - You will always be working in whole numbers
-    - Never working in fractions
-    - Then you use an equation to convert number to dollars and cents
-    - We'll discuss displaying money later
+* You will get an error that `dog` is not defined
+* If you don't use `'strict'` you won't get that error
 
+## It is enabled by default when writing JavaScript modules
+* You will just be writing JavaScript modules
 
-## power 
-* There are numbers that are too high and too small for JavaScript
-    - infinity
-    - and negative infinity
+## semi-colon
+* Used to end a `statement`
+* semi-colon go at end of statement
 
+## Why don't I have a semi-colon on first line?
 ```
-> 10 ** 2
-< 100
-```
-
-* Above `**` is "to the power of"
-
-```
-> 1000 ** 20
-> Infinity
+if (age > 10) {;
+    console.log('you are old');
+}
 ```
 
-```
-> -1000 ** 200
-> Infinity
-```
+* Because that is referred to as a "code block"
+* We could use ASI (Automatic Semi-colon insertion)
 
-```
-typeof Infinity // (number)
-typeof -Infinity // (number)
-```
-## NaN
-```
-> 10 / 'word'
-< NaN
-```
+## Scoping
+* Answers the question: "Where are my variables available to me?"
+* var variables are scoped differently than `const` and `let`
+* `var` variables are **function** scoped
+* `let` and `const` variables are  **block** scoped
 
-* Not a Number
+### Good tips with declaring variables
+* `const` by default
+* change to `let` when you need it
+* rarely (if ever) use `var`
 
-`typeof NaN //(number)`
+## Naming conventions for variables
+* Don't start with capital letter
+* Variables should not start with a capital letter unless they are a "class"
+* Variables must start with `a-z`
+* They also can start with or contain `$` or `_`
+* `_` is synonymous with lodash library
+* `$` is synonymous with jQuery library
+* Use camelCaseNotation for variable names
+* Upper CamelCaseNotation for class based names
+* You can not use kebab case in JavaScript (dashes are also substraction operator) this-is-kebab-case
+* `this_is_snake_case`
 
+# JavaScript Types
+## There are 7 types in JavaScript
+* way to remember this
+
+`SNOB'N'US`
+
+* String
+    - 'word'
+    - "word"
+    - `word`
+* Number
+    - 21
+    - other languages have decimal types, floats, integers, JavaScript has one 'Number' type
+* Object
+    - Everything in JavaScript is an Object
+    - Functions, arrays, dates are also Objects
+* Boolean
+* Null
+* Undefined
+* Symbol
+    - new to JavaScript
+    - Give us a guaranteed unique identifier useful when you need to come up with a unique id inside of an object
+
+### Primitive types
+* String
+* Number
+* Boolean
+
+## In modern Front-End Web Development 3 main components:
+
+1. Content
+  * HTML and markup
+2. Style
+  * CSS and layout
+3. Interactivity
+  * JavaScript and interactivity and behavior
+      - JavaScript can work with the `window` object (HTML and CSS can not)
+          + Everything you do with JavaScript in the browser happens inside the `window`
+          + A browser has a special object called the `window object`
+
+## Good way to think about HTML, CSS and JavaScript
+* Think of HTML as the walls of a house
+* Think of CSS as the paint on those walls
+* Think of JS as the electrical sockets in that house
+
+## Window Object
+Contains lots of information
+
+* Current location URL
+* Web page or the `document` you have open
+* The application code you've written
+
+### Let's experiment with the window object in the browser
+* Pick any website
+
+`> window`
+
+`> window.document`
+
+`> window.document.images`
+
+* Returns and array, an empty array if no images
+
+`> window.location.href`
+
+`> window.location.host`
+
+* **tip** `cmd + k` clears console (mac)
+
+* alert is `window.alert`
+* Also
+    - `window.document`
+    - `window.document.body`
+    - `document.head`
+    - `window.document.forms`
+    - `window.document.scripts`
+
+## What happens when the browser loads a web page?
+It creates TWO things:
+
+1. Window
+2. Document
+
+* Both window and document are objects
+    - Objects are containers for data and can perform specific actions for that particular object
+    - Many objects built into the browser environment and JavaScript itself
+    - You can create `custom` objects using JavaScript
+* Window is the global scope of your JavaScript program
+
+## Resources
+* [strict mode MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+* [QUOKKA](https://quokkajs.com/)
+* [SNOB'N'US]([reference](https://twitter.com/wesbos/status/1136729371513954312?lang=en)
+* [Use Web Bos Eslint and Prettier setup](https://github.com/wesbos/eslint-config-wesbos)
