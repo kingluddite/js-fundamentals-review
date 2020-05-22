@@ -32,6 +32,13 @@ if (age > 10) {;
 * Because that is referred to as a "code block"
 * We could use ASI (Automatic Semi-colon insertion)
 
+## == vs ===
+// == checks the value but not the type.
+// “1” == 1 => true
+// === checks the value and the type.
+// “1" === 1 => false
+// = Assignment Operator: Assigns the value from the right to the variable on the left.
+
 ## Scoping
 * Answers the question: "Where are my variables available to me?"
 * var variables are scoped differently than `const` and `let`
