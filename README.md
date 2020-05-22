@@ -1,151 +1,29 @@
-# Good to know
+# DOM
+* Document Object Model
+* When the browser reads an HTML file it creates a treelike structure of nodes
 
-## strict mode
-```
-'use strict'
-```
+## What is a node?
+* Node is a branching point that reveals more nodes
+* Each node is an HTML element or a JavaScript object that has properties and methods that can be accessed and used
+* Tree nodes is top down structure
+* **note** Not like the traditional tree structure with root on bottom
+8 The tree structure is the DOM tree or the Document Object Model
 
-* If you use this and try this:
+## MDN
+Mozilla Developer Network
+[link to MDN](https://developer.mozilla.org/en-US/)
 
-```
-'use strict'
-dog = 'peaches';
-```
+**note**: The DOM is NOT JavaScript but it is an interface that we can interact with the programming langauge JavaScript
 
-* You will get an error that `dog` is not defined
-* If you don't use `'strict'` you won't get that error
+[Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) - "The DOM is an API that allows access to and modification of the current document. It allows manipulation of document Node and Element. HTML, XML and SVG have extended it to manipulate their specific elements."
 
-## It is enabled by default when writing JavaScript modules
-* You will just be writing JavaScript modules
+"The Document Object Model (DOM) is a programming interface for `HTML`, `XML` and `SVG` documents. It provides a structured representation of the document as a tree. The `DOM` defines methods that allow access to the tree, so that they can change the document **structure**, **style** and **content**. The `DOM` provides a representation of the document as a structured group of nodes and objects, possessing various properties and methods. Nodes can also have **event handlers** attached to them, and once an event is **triggered**, the event handlers get executed. Essentially, it connects web pages to scripts or programming languages."
 
-## semi-colon
-* Used to end a `statement`
-* semi-colon go at end of statement
-
-## Why don't I have a semi-colon on first line?
-```
-if (age > 10) {;
-    console.log('you are old');
-}
-```
-
-* Because that is referred to as a "code block"
-* We could use ASI (Automatic Semi-colon insertion)
-
-## Scoping
-* Answers the question: "Where are my variables available to me?"
-* var variables are scoped differently than `const` and `let`
-* `var` variables are **function** scoped
-* `let` and `const` variables are  **block** scoped
-
-### Good tips with declaring variables
-* `const` by default
-* change to `let` when you need it
-* rarely (if ever) use `var`
-
-## Naming conventions for variables
-* Don't start with capital letter
-* Variables should not start with a capital letter unless they are a "class"
-* Variables must start with `a-z`
-* They also can start with or contain `$` or `_`
-* `_` is synonymous with lodash library
-* `$` is synonymous with jQuery library
-* Use camelCaseNotation for variable names
-* Upper CamelCaseNotation for class based names
-* You can not use kebab case in JavaScript (dashes are also substraction operator) this-is-kebab-case
-* `this_is_snake_case`
-
-# JavaScript Types
-## There are 7 types in JavaScript
-* way to remember this
-
-`SNOB'N'US`
-
-* String
-    - 'word'
-    - "word"
-    - `word`
-* Number
-    - 21
-    - other languages have decimal types, floats, integers, JavaScript has one 'Number' type
-* Object
-    - Everything in JavaScript is an Object
-    - Functions, arrays, dates are also Objects
-* Boolean
-* Null
-* Undefined
-* Symbol
-    - new to JavaScript
-    - Give us a guaranteed unique identifier useful when you need to come up with a unique id inside of an object
-
-### Primitive types
-* String
-* Number
-* Boolean
-
-## In modern Front-End Web Development 3 main components:
-
-1. Content
-  * HTML and markup
-2. Style
-  * CSS and layout
-3. Interactivity
-  * JavaScript and interactivity and behavior
-      - JavaScript can work with the `window` object (HTML and CSS can not)
-          + Everything you do with JavaScript in the browser happens inside the `window`
-          + A browser has a special object called the `window object`
-
-## Good way to think about HTML, CSS and JavaScript
-* Think of HTML as the walls of a house
-* Think of CSS as the paint on those walls
-* Think of JS as the electrical sockets in that house
-
-## Window Object
-Contains lots of information
-
-* Current location URL
-* Web page or the `document` you have open
-* The application code you've written
-
-### Let's experiment with the window object in the browser
-* Pick any website
-
-`> window`
-
-`> window.document`
-
-`> window.document.images`
-
-* Returns and array, an empty array if no images
-
-`> window.location.href`
-
-`> window.location.host`
-
-* **tip** `cmd + k` clears console (mac)
-
-* alert is `window.alert`
-* Also
-    - `window.document`
-    - `window.document.body`
-    - `document.head`
-    - `window.document.forms`
-    - `window.document.scripts`
-
-## What happens when the browser loads a web page?
-It creates TWO things:
-
-1. Window
-2. Document
-
-* Both window and document are objects
-    - Objects are containers for data and can perform specific actions for that particular object
-    - Many objects built into the browser environment and JavaScript itself
-    - You can create `custom` objects using JavaScript
-* Window is the global scope of your JavaScript program
-
-## Resources
-* [strict mode MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
-* [QUOKKA](https://quokkajs.com/)
-* [SNOB'N'US]([reference](https://twitter.com/wesbos/status/1136729371513954312?lang=en)
-* [Use Web Bos Eslint and Prettier setup](https://github.com/wesbos/eslint-config-wesbos)
+### 3 Types of Actions We Can Do to the DOM
+* Manipulation
+    - where we manipulate elements
+* Traversal
+    - Selecting an element based on the relationship with another element.
+        + Example: select a child element of a known parent element like a `<Li>` child of an `<UL>`
+* Events
+    - Listening to a specific event, like a mouse click or a key press, and having something execute
