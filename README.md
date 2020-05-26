@@ -1,46 +1,62 @@
-# JS Project - Map and sort
-## Part 1 - Map
-* REPL
-* [docs map array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-* Add the following code to MDN REPL
+# JS Project - sort
+* [docs on MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
+## REPL MDN
 ```
-const arr = [1,2,3,4,5];
+const arr = [1, 2, 110, 3, 4, 330]
 
-const arr2 = arr.map(item => {
-  return `Number: ${item}`;
+const sortedArr = arr.sort();
+
+console.log(sortedArr) // [1, 110, 2, 3, 330, 4]
+// why not in order?
+// "built upon converting the elements into strings, then comparing their sequences"
+// when using .sort() you have to use a compare function
+// firstEl for comparing and secondEl for comparing
+```
+
+## REPL with sort and compare function (ascending order)
+```
+const arr = [1, 2, 110, 3, 4, 330]
+
+const sortedArr = arr.sort(function(a, b) {
+  return a - b;
 });
 
-console.log(arr2)
+console.log(sortedArr) // [1, 2, 3, 4, 110, 330]
 ```
-* Click `Run`
-* `> Array ["Number: 1", "Number: 2", "Number: 3", "Number: 4", "Number: 5"]`
 
-## Part 2 - Double it with map
+## REPL with sort and compare function (decending order)
 ```
-const arr = [1,2,3,4,5];
+const arr = [1, 2, 110, 3, 4, 330]
 
-const arr2 = arr.map(item => {
-  return item * 2;
+const sortedArr = arr.sort(function(a, b) {
+  return b - a;
 });
 
-console.log(arr2) // Array [2, 4, 6, 8, 10]
+console.log(sortedArr); // [330, 110, 4, 3, 2, 1]
 ```
 
-## Part 3 - Double and show DOM updated
+## REPL with sort compare and arrow function
 ```
-function doubleMoney() {
-  data = data.map(user => {
-    // using spread operator
-    return { ...user, money: user.money * 2}
-  });
+const arr = [1, 2, 110, 3, 4, 330]
 
-  // don't forget to update the DOM!
+const sortedArr = arr.sort((a, b) => a - b);
+
+console.log(sortedArr)
+```
+
+## Add sort function and event listener
+```
+// Sort users by richest
+function sortByRichest() {
+  // b.money b is an object (not just a single number)
+  // b - a because want sort descending (to sort by richest first)
+  data.sort((a, b) => b.money - a.money);
+
   updateDOM();
 }
-
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
 ```
-

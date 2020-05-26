@@ -65,6 +65,15 @@ function doubleMoney() {
   updateDOM();
 }
 
+// Sort users by richest
+function sortByRichest() {
+  // b.money b is an object (not just a single number)
+  // b - a because want sort descending (to sort by richest first)
+  data.sort((a, b) => b.money - a.money);
+
+  updateDOM();
+}
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
