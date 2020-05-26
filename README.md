@@ -27,6 +27,7 @@ $ git checkout 11-bonus-arrays
 ```
 
 ### Day 3
+* [ref - demo using code from a great class to get more practice with JavaScript](https://www.udemy.com/course/web-projects-with-vanilla-javascript/)
 ```
 $ git checkout 12-jquery
 $ git checkout 13-js-proj-html
