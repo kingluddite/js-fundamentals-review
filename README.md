@@ -18,12 +18,8 @@ $ git checkout 06-functions
 $ git checkout 07-objects
 ```
 
-### Day 2
-```
-$ git checkout 08-numbers
-$ git checkout 09-good-to-know
-$ git checkout 10-dom
-$ git checkout 11-bonus-arrays
-```
+### jQuery
+* CSS
+* Form Validation
 
 
