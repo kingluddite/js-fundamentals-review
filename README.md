@@ -1,30 +1,55 @@
-# JS Project - filter()
-* [filter mdn docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-* Allows us to filter things out
-* We want to filter to see only millionaires
+# JS Project - Reduce
+* Aggregate every users's money
+* [docs on reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+* The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value
+    - **note** We are not returning an array we are returning a single value where we want it to be the total
 
-## Part 1 - REPL
+## Part 2 - REPL
 ```
-const arr = [20, 23, 39, 1, 3, 100, 200];
+const arr = [1,2,3,4,5];
 
-const over30 = arr.filter(function(item) {
-  return item > 30;
-})
+// 0 is "start value"
+// acc is "accumulator"
+const total = arr.reduce((acc, num) => (acc + num), 0);
 
-console.log(over30); // [39, 100, 200]
+console.log(total); // 15
 ```
 
-## Part 2 - filter only millionaires
+## Part 3 - Calculate wealth
 ```
-// Filter only millionaires
-function showMillionaires() {
-  data = data.filter(user => user.money > 1000000);
+// Calculate the total wealth
+function calculateWealth() {
+  const wealth = data.reduce((acc, user) => (acc += user.money), 0);
 
-  updateDOM();
+  console.log(wealth);
 }
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
 showMillionairesBtn.addEventListener('click', showMillionaires);
+calculateWealthBtn.addEventListener('click', calculateWealth);
+```
+
+## Part 4 - Format Money
+```
+// Calculate the total wealth
+function calculateWealth() {
+  const wealth = data.reduce((acc, user) => (acc += user.money), 0);
+
+  console.log(formatMoney(wealth));
+}
+```
+
+## Part 5 - Add wealth to UI using DOM
+```
+// Calculate the total wealth
+function calculateWealth() {
+  const wealth = data.reduce((acc, user) => (acc += user.money), 0);
+
+  const wealthEl = document.createElement('div');
+  wealthEl.innerHTML = `<h3>Total Wealth: <strong>${formatMoney(wealth)}</strong></h3>`;
+  // add to DOM
+  main.appendChild(wealthEl);
+}
 ```
