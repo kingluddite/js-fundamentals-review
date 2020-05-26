@@ -1,106 +1,46 @@
-# JS Project - DOM
-* Display users in DOM
+# JS Project - Map and sort
+## Part 1 - Map
+* REPL
+* [docs map array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+* Add the following code to MDN REPL
 
-## Part 1
 ```
-// MORE CODE
+const arr = [1,2,3,4,5];
 
-getRandomUser();
+const arr2 = arr.map(item => {
+  return `Number: ${item}`;
+});
 
-
-// Update DOM
-// set a default (if nothing is passed in just use default data array)
-function updateDOM(providedData = data) {
-  // Clear main div
-  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
-
-  providedData[i].forEach(function(item) {
-
-  })
-}
-// MORE CODE
+console.log(arr2)
 ```
+* Click `Run`
+* `> Array ["Number: 1", "Number: 2", "Number: 3", "Number: 4", "Number: 5"]`
 
-## Part 2 - Arrow function
+## Part 2 - Double it with map
 ```
-// MORE CODE
+const arr = [1,2,3,4,5];
 
-// Update DOM
-// set a default (if nothing is passed in just use default data array)
-function updateDOM(providedData = data) {
-  // Clear main div
-  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
+const arr2 = arr.map(item => {
+  return item * 2;
+});
 
-  providedData.forEach(item => {
-    const element = document.createElement('div');
-    element.classList.add('person');
-    element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
-  })
-}
-// MORE CODE
+console.log(arr2) // Array [2, 4, 6, 8, 10]
 ```
 
-## Part 3 - Insert into DOM
+## Part 3 - Double and show DOM updated
 ```
-// MORE CODE
+function doubleMoney() {
+  data = data.map(user => {
+    // using spread operator
+    return { ...user, money: user.money * 2}
+  });
 
-// Add new obj to data arr
-function addData(obj) {
-  data.push(obj);
-
+  // don't forget to update the DOM!
   updateDOM();
-}
-
-getRandomUser();
-getRandomUser();
-getRandomUser();
-
-
-// Update DOM
-// set a default (if nothing is passed in just use default data array)
-function updateDOM(providedData = data) {
-  // Clear main div
-  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
-
-  providedData.forEach(item => {
-    const element = document.createElement('div');
-    element.classList.add('person');
-    element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
-    main.appendChild(element);
-  })
-}
-// MORE CODE
-```
-
-## Part 4 - Format as money
-* [short and fast solution - link stackoverflow](https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string)
-
-```
-function updateDOM(providedData = data) {
-  // Clear main div
-  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
-
-  providedData.forEach(item => {
-    const element = document.createElement('div');
-    element.classList.add('person');
-    element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(item.money)}`;
-    main.appendChild(element);
-  })
-}
-
-// Short and fast solution (works everywhere!)
-function formatMoney(number) {
-  return '$ ' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-}
-```
-
-## Part 5 - Event Listener
-```
-// Short and fast solution (works everywhere!)
-function formatMoney(number) {
-  return '$ ' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 }
 
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
 ```
+
