@@ -26,4 +26,17 @@ $ git checkout 10-dom
 $ git checkout 11-bonus-arrays
 ```
 
+### Day 3
+```
+$ git checkout 12-jquery
+$ git checkout 13-js-proj-html
+$ git checkout 14-js-proj-css
+$ git checkout 15-js-proj-users
+$ git checkout 16-js-proj-dom
+$ git checkout 17-js-proj-map
+$ git checkout 18-js-proj-sort
+$ git checkout 19-js-proj-filter
+$ git checkout 20-js-proj-reduce
+```
+
 
